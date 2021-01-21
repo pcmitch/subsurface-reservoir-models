@@ -1,0 +1,5 @@
+-- Specify constant rock compressibility.
+-- Pref Cr
+
+ROCK 
+	14.7 3.2e-6 / ROCKCP 1

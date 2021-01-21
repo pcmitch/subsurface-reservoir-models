@@ -1,0 +1,35 @@
+-- List data vectors to store for graphics post-processing
+
+-- Write data at report times only
+RPTONLY
+
+-- Well Water Cut for all wells
+WWCT
+WP1 /
+
+-- Well oil production rate
+WOPR
+WP1 /
+
+-- Well Water production rate
+WWPR
+WP1 /
+
+-- Well Liquid production rate
+WLPR
+WP1 /
+
+--Well Bottom hole pressure
+WBHP
+WP1 /
+
+-- Well water injection rate
+WWIR
+WI1 /
+
+-- Field average reservoir pressure
+FPR
+
+-- Output .RSM file
+EXCEL
+SEPARATE

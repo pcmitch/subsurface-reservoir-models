@@ -1,0 +1,15 @@
+-- Relative permeability for water and oil,
+-- and water-oil capillary pressure, as a function of water saturation
+-- Forties formation values from Hughes, 1990.
+
+SWOF
+-- Sw   Krw     Krow   Pcow
+0.23   0.0000  1.0000  6.18
+0.27   0.0031  0.8650  3.93
+0.30   0.0077  0.7700  3.16
+0.40   0.0317  0.4930  1.80
+0.50   0.0667  0.2770  1.30
+0.60   0.1102  0.1230  0.95
+0.70   0.1615  0.0310  0.78
+0.80   0.2200  0.0000  0.63
+1.00   1.0000  0.0000  0.00 /

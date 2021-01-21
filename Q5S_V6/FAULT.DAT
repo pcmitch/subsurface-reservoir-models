@@ -1,0 +1,13 @@
+-- For Q5S_V6
+-- Introduce a fault to the model.
+-- Paul Mitchell, June 2020
+
+FAULTS
+--            IX1      IX2      IY1      IY2      IZ1      IZ2     FACE
+Fault_1         1       20       10       10        1        3        J /
+/
+
+MULTFLT
+-- Fault transmissibility multiplier - no diffusion
+Fault_1  0.1 /  FLT_TRANS 1
+/

@@ -1,0 +1,7 @@
+-- For Q5S_V3 models based on Forties Field properties in:
+-- Gluyas, J. G., Hichens, H. M. and Geological Society of, L. (2003) United Kingdom oil and gas fields : 
+-- commemorative millennium volume edited by J.G. Gluyas, H.M. Hichens. London: London : Geological Society.
+
+EQUIL
+-- Datum depth, Pressure@datum, OWC, Capillary Presure at Contact 
+6660 3215 7274 0.00 5* / OWC 2

@@ -1,0 +1,16 @@
+-- For Q5S_V4 models based on Forties Field properties in:
+-- Gluyas, J. G., Hichens, H. M. and Geological Society of, L. (2003) United Kingdom oil and gas fields :
+-- commemorative millennium volume / edited by J.G. Gluyas, H.M. Hichens. London: London : Geological Society.
+-- Paul Mitchell, Jan 2020
+
+-- Permeability is defined in the above paaper. PERMX and PERMY are bothe set to tha range
+-- Kv/Kh is estimated as 0.01 based on Hughes etal., 1990 (Gannet)
+
+
+EQUALS
+	PERMX   700 1 20 1 20 1 3 / PERMXL13 1
+	PERMY 	700 1 20 1 20 1 3 / PERMYL13 1
+	PERMZ 	7 1 20 1 20 1 3 / PERMZL13 1
+/
+
+

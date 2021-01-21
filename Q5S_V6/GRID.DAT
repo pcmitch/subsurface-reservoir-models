@@ -1,0 +1,20 @@
+-- For Q5S_V3 models based on Forties Field properties in:
+-- Gluyas, J. G., Hichens, H. M. and Geological Society of, L. (2003) United Kingdom oil and gas fields :
+-- commemorative millennium volume / edited by J.G. Gluyas, H.M. Hichens. London: London : Geological Society.
+
+-- Top of reservoir is 6660, OWC is 7274ft TVDSS
+
+DX
+1200*82.021 / --25m
+DY
+1200*82.021 / --25m
+DZ
+1200*30 /
+
+-- So far the grid shape has been defined, but we also need to define at
+-- which depth (measured from sea level) the cell tops are. We assume a
+-- horizontal reservoir, and input depths which are consistent with the
+-- DZ-values we defined above.
+
+TOPS
+400*6660 400*6690 400*6720 /

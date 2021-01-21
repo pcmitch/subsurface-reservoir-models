@@ -1,0 +1,44 @@
+-- Control reservoir by liquid rate (LRAT), trying to maintain pressure.
+
+RPTRST
+BASIC=5 NORST=1 FREQ=1 /
+
+-- Well specification: Give names, positions (i, j) and main phase of wells
+WELSPECS
+--wname group i j Z(bhp) prefPhase
+WP1 P1 20 1 1* OIL /
+WI1 I1 1 20 1* WATER /
+/
+
+COMPDAT
+--wname ic jc k_hi k_lo open/shut 2*Don�tCare well_diam Default...
+WP1  20  1 1 3 OPEN 2* 0.5 4* /
+WI1  1  20 1 3 OPEN 2* 0.5 4* / 
+/
+
+-- Production data, specify producing rate and constraints
+-- Well WP1 will produce with a liquid rate of 5000 barrels/day constrained by
+-- liquid rate (LRAT) and a miniumum flowing bottom hole pressure of 1150 psi.
+-- 
+-- Water injection rate is set automatically to try to maintain reservoir presuure 
+-- i.e. VREP
+
+WCONPROD
+--Well       Flag  Ctrl  Oil  Water  Gas  Liquid  ResVol  BHPmin Rest default...
+  WP1  OPEN  LRAT  1*   1*     1*   5000    1*      1150  /
+/
+
+WCONINJE
+--Well       Fluid Flag Ctrl  Rate  Resv BHP   THP
+  WI1		  WATER OPEN GRUP  /
+/
+
+GCONINJE
+--Group  Fluid  Ctrl  Rate  ... REIN  VREP  
+  FIELD  WATER  VREP  1*  1*  1*    1.0  /
+/ 
+
+
+-- Create report every 30 days
+TSTEP 
+1 48*30 /

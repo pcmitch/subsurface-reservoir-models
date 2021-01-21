@@ -1,0 +1,43 @@
+-- For Q5S_V3 models based on Forties Field properties in:
+-- Gluyas, J. G., Hichens, H. M. and Geological Society of, L. (2003) United Kingdom oil and gas fields :
+-- commemorative millennium volume / edited by J.G. Gluyas, H.M. Hichens. London: London : Geological Society.
+-- Paul Mitchell, Jan 2020
+
+-- Properties calculated from Oil densiy of 37 API
+
+
+-- PVT properties for water.
+-- (Pref: Reference pressure for rest of data (psi)
+-- Bw: Volume formation factor for water
+-- Cw: Water compressibiblity
+-- ViscW: Water viscosity )
+-- Field units: 
+--   pressure: Psia
+--   formation volume factor: rb/stb
+--   viscosity: cP (water = 0.89cp at 25 degC and 1atm or 14.695psi)
+--   viscosibility: 1/psi
+--   Gas oil ratio, Rs: Mscf/stb
+
+PVTW
+-- Pref Bw Cw ViscW
+3230 1.029 3.00E-6 0.36 0 / WATERB0 1 WATERCO 2 WATERVISC 3
+
+-- PVT properties for oil
+-- Oil compressibility and Voscosibility calculated by Gabriel Marcus
+-- to match oil PVT values in Q5S_v1
+
+-- Viscosibily unknown
+PVCDO
+--Pref  Bo@Pref  Co        Visc@Pref Cv
+  3230  1.242    9.6E-06  0.76    5.7E-5   /  OILCO 2 OILCV 4
+  
+-- Dead oil: Rs (Gas resolution factor) is constant
+-- Rs unknown
+RSCONST
+--Rs   Pb
+  0.4  1145 /
+
+
+
+
+

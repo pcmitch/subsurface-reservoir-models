@@ -1,0 +1,130 @@
+--==============================================================================
+RUNSPEC
+--==============================================================================
+
+-- This model is used to calculate fitnes landscape for independent layer properties.
+-- Introduce a fault into the model.
+-- Title is used as header on output, to identify run
+TITLE
+Q5S_V6A  - TRUE MODEL - PAUL MITCHELL 23rd September 2020
+
+-- Specify dimension of model, NX, NY, NZ
+DIMENS
+-- NX NY NZ
+20 20 3 /
+
+-- Phases included (oil and water, i.e. 2-phase run)
+OIL
+WATER
+
+-- Units to use, alternatives are METRIC, FIELD or LAB
+FIELD
+
+-- Specify maximum values for well data (# means “max number of”)
+WELLDIMS
+-- #wells #cell-connections #groups #number-wells-per-group
+2 3 2 2 /
+
+-- Specify the number of faults in the model
+FAULTDIM
+2/
+
+-- Start date, i.e. “Day 0” in simulation
+START
+1 JAN 2004 /
+
+-- Unified output files
+UNIFOUT
+
+--==============================================================================
+GRID
+--==============================================================================
+
+-- Turn off writing of data to report file
+--NOECHO
+
+INCLUDE
+	'GRID.DAT' /
+	
+-- Permeability in include file to allow MOPHiM to modify it more easily
+INCLUDE 
+	'PERM.DAT' /
+
+-- Permeability in include file to allow MOPHiM to modify it more easily
+INCLUDE
+	'PORO.DAT' /
+
+-- Net-to-Gross in include file to allow MOPHiM to modify it more easily
+INCLUDE
+	'NTG.DAT' /
+
+-- Faults to include in the model
+INCLUDE
+	'FAULT.DAT' /
+
+-- Request to write an INIT (initial) file. Contains all data used to
+-- initialize the model
+INIT
+
+-- Turn report writing back on
+
+-- Incorporate a low porosity, permeability and NTG area 
+-- to upper right quarter of model in layer 3
+
+EQUALS
+	PORO	0.15 10 20 1 10 3 3 /
+	NTG 	0.3  10 20 1 10 3 3 /
+	PERMX	200  10 20 1 10 3 3 /
+	PERMY	200  10 20 1 10 3 3 /
+	PERMZ	2    10 20 1 10 3 3 /
+/
+
+--ECHO
+
+--==============================================================================
+EDIT
+--==============================================================================
+
+--==============================================================================
+PROPS
+--==============================================================================
+
+INCLUDE
+	'RELPERM.DAT' /
+
+INCLUDE
+	'PVT.DAT' /
+
+INCLUDE
+	'ROCKCP.DAT' /
+	
+INCLUDE
+	'FLUID.DAT' /
+	
+--==============================================================================
+REGIONS
+--==============================================================================
+
+--==============================================================================
+SOLUTION
+--==============================================================================
+
+INCLUDE
+	'EQUIL.DAT' /
+	
+--==============================================================================
+SUMMARY
+--==============================================================================
+
+INCLUDE 
+	'SUMMARY.DAT' /
+
+--==============================================================================
+SCHEDULE
+--==============================================================================
+
+INCLUDE
+	'SCHEDULE.DAT' /
+
+END
+

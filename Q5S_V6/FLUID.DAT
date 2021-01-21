@@ -1,0 +1,10 @@
+-- Fluid densities at surface conditions
+-- 
+-- Buller, Norges tekniske, h., Universitetet i, T. and Norges teknisk-naturvienskapelige, u. (1990)
+-- North Sea oil and gas reservoirs - 2: 2nd conference 1989 / edited by A.T.Buller and 
+-- others. Graham and Trotnam.
+
+
+DENSITY
+-- Oil Water Gas
+52.6 63.9 0.078 /

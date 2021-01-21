@@ -1,0 +1,10 @@
+-- For Q5S_V6 models based on Forties Field properties in:
+-- Gluyas, J. G., Hichens, H. M. and Geological Society of, L. (2003) United Kingdom oil and gas fields :
+-- commemorative millennium volume / edited by J.G. Gluyas, H.M. Hichens. London: London : Geological Society.
+
+EQUALS
+	PORO	0.18 1 20 1 20 1 1 / POROL1 1
+	PORO	0.33 1 20 1 20 2 2 / POROL2 1
+	PORO	0.22 1 20 1 20 3 3 / POROL3 1
+/
+
